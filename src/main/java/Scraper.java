@@ -14,15 +14,15 @@ import javax.mail.internet.MimeMessage;
 public class Scraper {
 
     final static String apartmentURL = "https://tracemidtown.com/floorplans/";
-    final static String username = "webscraperapartments@gmail.com";
-    final static String password = "webscraper123";
+    final static String username = "";
+    final static String password = "";
     final static String recipient = "bragalotwill@gmail.com";
 
     public static void main(String[] args) throws IOException, InterruptedException {
         Document floorplans = Jsoup.connect(apartmentURL).get();
         List<Apartment> apartments = new ArrayList<>();
         List<Apartment> augustApartments = new ArrayList<>();
-        for (Element e : floorplans.select("a")) {
+        for (Element e : floorplans.select("a")) {webscraperapartments
             String link = e.attr("href");
             if (link.contains(apartmentURL)) {
                 Document floorplan = Jsoup.connect(link).get();
